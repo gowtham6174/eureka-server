@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       app: edureka
-    template:
+  template:
       metadata:
         labels:
           app: edureka
