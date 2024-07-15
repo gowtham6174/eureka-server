@@ -2,20 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: springboot-app
-  name: springboot-app
+    app: edureka
+  name: edureka
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: springboot-app
+      app: edureka
     template:
       metadata:
         labels:
-          app: springboot-app
+          app: edureka
       spec:
         containers:
-        - name: my-springboot-app
+        - name: edureka
           image: 905418070139.dkr.ecr.ap-south-1.amazonaws.com/edureka:latest
           imagePullPolicy: Always
           ports:
@@ -28,9 +28,9 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: springboot-app
-    k8s-app: springboot-app
-  name: springboot-app
+    app: edureka
+    k8s-app: edureka
+  name: edureka
 spec:
   ports:
   - name: http
@@ -39,4 +39,4 @@ spec:
     targetPort: 8761
   type: LoadBalancer
   selector:
-    app: springboot-app  
+    app: edureka
